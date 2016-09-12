@@ -1,0 +1,22 @@
+# ----- Mac
+.DS_Store
+
+# ----- env, config vars
+*.env
+**config**
+**var/**
+
+# ----- Files general
+*.log
+**cache**
+**foo**
+**dist**
+**temp**
+*.sqlite
+build
+
+# ----- JetBrains
+.idea/
+
+# ----- Allow
+!**template**
