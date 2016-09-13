@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" type="text/css" href="" media="only screen and (max-device-width: 480px)">
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <meta name="keywords" content="">
+    <style type="text/css">
+        body {
+            padding: 10px;
+            font-family: Verdana;
+            font-size: 0.8em;
+        }
+        div {
+            /*border: 1px #000 solid;*/
+        }
+        form {
+            margin: 10px 0 20px 0;
+        }
+        #header {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+        }
+        .result {
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="convert2seconds.js">
+    </script>
+</head>
+<body onload="calc()">
+<div id="header">Convert hours/minuts/seconds to seconds</div>
+<div>
+    <form oninput="calc()" onsubmit="calc()">
+        <label>hh</label>
+        <input id="hh" size="1">
+        <label>mm</label>
+        <input id="mm" size="2">
+        <label>ss</label>
+        <input id="ss" size="2">
+        <!--<input type="submit" value="convert">-->
+    </form>
+</div>
+<div class="result">Result:</div>
+<div id="result" class="result"></div>
+</body>
+</html>
