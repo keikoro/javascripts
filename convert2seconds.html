@@ -22,7 +22,12 @@
             margin: 10px 0 20px 0;
         }
         #header {
-            font-size: 1.4em;
+            font-size: 1.6em;
+        }
+        #subheader {
+            font-size: 1.1em;
+        }
+        .spacer {
             margin-bottom: 30px;
         }
         .result {
@@ -34,14 +39,16 @@
     </script>
 </head>
 <body onload="calc()">
-<div id="header">Convert hours/minuts/seconds to seconds</div>
+<div id="header">Convert hours/minutes/seconds to seconds</div>
+<div id="subheader">enter only seconds to convert them back to hrs/mins</div>
+<div class="spacer"></div>
 <div>
     <form oninput="calc()" onsubmit="calc()">
-        <label>hh</label>
+        <label>h</label>
         <input id="hh" size="1">
-        <label>mm</label>
+        <label>m</label>
         <input id="mm" size="2">
-        <label>ss</label>
+        <label>s</label>
         <input id="ss" size="2">
         <!--<input type="submit" value="convert">-->
     </form>
