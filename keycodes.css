@@ -1,0 +1,30 @@
+body {
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 0.8em;
+}
+#header {
+    font-size: 1.6em;
+}
+.spacer {
+    margin-bottom: 10px;
+}
+.regular {
+    /*background: #EF44AF;*/
+    /*border: 1px solid #AF44AF;*/
+    width: 4em;
+    /*text-align: center;*/
+    padding: 0.5em 1em;
+    font-family: Monaco;
+    float: left;
+}
+
+.fun {
+    /*background: #EF44AF;*/
+    /*border: 1px solid #AF44AF;*/
+    width: 4em;
+    /*text-align: center;*/
+    padding: 0.5em 1em;
+    font-family: Monaco;
+    float: left;
+}
