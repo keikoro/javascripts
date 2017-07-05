@@ -9,11 +9,11 @@ function keyboardInput(event) {
     // get Unicode for key presses
     var keyCode = event.which;
     var thisKey = String.fromCharCode(keyCode);
-    console.log(keyCode);
+    // console.log(keyCode);
 
     // create a new div for each key press and append it to the body
     var makeDiv = document.createElement("div");
-    makeDiv.className = "regular";
+    makeDiv.className = "cell";
 
     // make spaces show up
     if (keyCode == 32) {
@@ -41,16 +41,11 @@ function calc_size() {
     return [height, width];
 }
 
-
 // add height of any header-like elements on page together and return it
 function getOccupiedSpace() {
+    var maincontainerHeight = document.getElementsByClassName('maincontainer')[0].offsetHeight;
 
-    var headerHeight = document.getElementById('header').offsetHeight;
-    var footerHeight = document.getElementById('footer').offsetHeight;
-    var spacerHeight = document.getElementsByClassName('spacer')[0].offsetHeight;
-
-
-    var occupiedHeight = headerHeight + footerHeight + spacerHeight + 10;
+    var occupiedHeight = maincontainerHeight;
     console.log("occupied h: " + occupiedHeight + "px");
 
     return occupiedHeight;
@@ -58,6 +53,7 @@ function getOccupiedSpace() {
 
 // change height of columns depending on document height
 function resizeColumns(height) {
+    var cellHeight = document.getElementsByClassName('cell')[0].offsetHeight;
 
     // subtract height occupied by header to calculate remaining height
     var occupiedHeight = getOccupiedSpace();
@@ -67,9 +63,10 @@ function resizeColumns(height) {
     // calculate how many cells fit into one column
     // and base new column height on it
     var noOfCells = Math.floor(newHeight/cellHeight) - 1;
-    var newColHeight = (noOfCells*cellHeight) + 10;
+    var newColHeight = (noOfCells*cellHeight) - 20;
 
     // iterate over columns to change their height
+    // TODO currently there is only one column!
     var column = document.getElementsByClassName('column');
     var countCols = column.length;
     for (var i=0; i<countCols; i++) {
@@ -80,13 +77,11 @@ function resizeColumns(height) {
 
 // code to execute once the site has finished loading
 document.addEventListener('DOMContentLoaded', function() {
-
     var window_size = calc_size();
     var height = window_size[0];
-    var width = window_size[1];
 
     // determine height of one cell
-    cellHeight = document.getElementsByClassName('regular')[0].offsetHeight;
+    var cellHeight = document.getElementsByClassName('cell')[0].offsetHeight;
     console.log("cell h: " + cellHeight + "px");
 
     resizeColumns(height);
@@ -95,10 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // code to execute on browser window resize
 window.addEventListener('resize', function() {
-
     var window_size = calc_size();
     var height = window_size[0];
-    var width = window_size[1];
 
     resizeColumns(height);
 });
