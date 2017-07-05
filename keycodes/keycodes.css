@@ -1,15 +1,16 @@
 body {
-    padding: 10px;
     font-family: Verdana, Helvetica, "sans-serif";
     font-size: 0.8em;
+
+    padding: 1em;
+    margin-left: 1em;
+    color: rgb(35, 35, 0);
 }
 
-#header {
+h1 {
     font-size: 1.6em;
-}
-
-.spacer {
-    margin-bottom: 10px;
+    font-weight: normal;
+    margin-top: 1em;
 }
 
 .column {
@@ -23,11 +24,15 @@ body {
     column-fill: auto;
 }
 
-.regular {
+.cell {
     height: 2em;
     width: 3em;
     padding: 0.5em 1em;
     font-family: Monaco, Helvetica, "sans-serif";
+}
+
+.protocell {
+  visibility: hidden;
 }
 
 .fun {
